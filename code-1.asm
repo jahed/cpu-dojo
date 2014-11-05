@@ -1,0 +1,4 @@
+LDA 100
+ADC 7
+STA 5
+BRK
