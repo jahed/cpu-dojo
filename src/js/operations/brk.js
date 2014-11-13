@@ -1,6 +1,5 @@
 module.exports = {
     name: 'BRK',
-    code: 0,
     length: 1,
     execute: function(cpu) {
         console.log('\nCPU State:');

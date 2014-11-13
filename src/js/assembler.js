@@ -2,11 +2,18 @@ var fs = require('fs'),
     util = require('./util');
 
 var labels,
-    cpu;
+    cpu,
+    operationNameToCodeMap;
 
 function init(cpuArg) {
     labels = {};
     cpu = cpuArg;
+
+    operationNameToCodeMap = {};
+
+    cpuArg.operations.forEach(function(operation, index) {
+        operationNameToCodeMap[operation.name] = index;
+    });
 }
 
 function compile(file, cb) {
@@ -54,11 +61,10 @@ function parseLabelDefinitions(parts) {
 function getValue(part, index, previousValue) {
 
     //Translate OpName to OpCode
-    var matches = cpu.operations.filter(function(operation) {
-        return operation.name === part;
-    });
-    if(matches.length === 1) {
-        return matches[0].code;
+    for(var operationIndex = 0; operationIndex < cpu.operations.length; operationIndex++) {
+        if(cpu.operations[operationIndex].name === part) {
+            return operationIndex;
+        }
     }
 
     //Translate Label References based on OpCode before it
