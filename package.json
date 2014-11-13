@@ -1,0 +1,19 @@
+{
+  "name": "cpu-dojo",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./src/js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jahed/cpu-dojo.git"
+  },
+  "author": "Jahed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jahed/cpu-dojo/issues"
+  },
+  "homepage": "https://github.com/jahed/cpu-dojo"
+}
