@@ -51,9 +51,9 @@ cpu.execute = function execute(input) {
             cpu.programCounter++;
         }
     } catch(e) {
-        console.log('\n\nFailed!');
-        console.log('\nMemory:');
-        console.log(util.arrayToObject(cpu.memory));
+        console.log('\n\nFailed! Start Debug Data ---');
+        console.log('CPU State:');
+        console.log(cpu);
         console.log('\nFailed!');
         console.log(e);
         console.log(e.stack);
